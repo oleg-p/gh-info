@@ -34,6 +34,7 @@ tests/_support/_generated
 
 config/db.php
 config/test_db.php
+config/params_local.php
 
 web/index.php
 web/index-test.php

@@ -27,11 +27,8 @@ class GhUserController extends Controller
 
     public function actionIndex()
     {
-        $searchModel = new GhUserSearch();
-
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $searchModel->search(),
+            'dataProvider' => (new GhUserSearch())->search(),
         ]);
     }
 
@@ -44,7 +41,8 @@ class GhUserController extends Controller
                 Yii::$app->session->setFlash('success', 'Пользователь создан успешно');
                 return $this->redirect(['index']);
             }
-            return Yii::$app->session->setFlash('danger', 'Не удалось создать пользователя');
+            Yii::$app->session->setFlash('danger', 'Не удалось создать пользователя');
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -61,7 +59,8 @@ class GhUserController extends Controller
                 Yii::$app->session->setFlash('success', 'Пользователь сохранён успешно');
                 return $this->redirect(['index']);
             }
-            return Yii::$app->session->setFlash('danger', 'Не удалось сохранить пользователя');
+            Yii::$app->session->setFlash('danger', 'Не удалось сохранить пользователя');
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [
