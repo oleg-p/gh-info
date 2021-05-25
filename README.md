@@ -1,11 +1,15 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Basic Project Template</h1>
-    <br>
-</p>
-
+<h1>Описание задачи</h1>
+<h2>Список пользователей гитхаб</h2>
+<p>Реализовано отображение списка пользователей гитхаба с возможностью создания, редактирования и удаления элементов</p>
+<h2>Страница статистики пользователей</h2>
+<p>На странице статистики отображается информация по репозиториям пользователей по следующему алгоритму:</p>
+<ul>
+   <li>Запрашиваются последние по дате репозитории пользователей из списка</li>
+   <li>Отображаются 10 самых свежих репозиториев из полученного списка</li>
+   <li>Результаты автоматически обновляются каждые 10 минут</li>
+</ul>
+<hr/>
+<h2>Общая информация о шаблоне проекте</h2>
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
 
@@ -31,13 +35,14 @@ DIRECTORY STRUCTURE
       vendor/             contains dependent 3rd-party packages
       views/              contains view files for the Web application
       web/                contains the entry script and Web resources
+      src/                contains the Infrasrtructure of application and User Stories
 
 
 
 REQUIREMENTS
 ------------
 
-The minimum requirement by this project template that your Web server supports PHP 5.6.0.
+The minimum requirement by this project template that your Web server supports PHP 7.2.0.
 
 
 INSTALLATION
