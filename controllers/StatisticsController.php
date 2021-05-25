@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace app\controllers;
 
+use Yii;
 use GhInfo\Infrastructure\Http\YiiTransport;
 use GhInfo\UserStory\Site\GetUsersRepositories\ArrayAvailable;
 use GhInfo\UserStory\Site\GetUsersRepositories\IndexedUpdatedAndIdArray;
@@ -40,7 +41,9 @@ class StatisticsController extends Controller
                     new IndexedUpdatedAndIdArray(
                         new UsersRepositoriesFromGithub(
                             new ListUsersLogin(),
-                            new YiiTransport(new Client())
+                            new YiiTransport(new Client()),
+                            Yii::$app->cache,
+                            5 * 60
                         )
                     )
                 ),
